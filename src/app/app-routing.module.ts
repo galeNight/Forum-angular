@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RolesComponent } from './roles/roles.component';
 import { RouterModule, Routes } from '@angular/router';
+import { RolesComponent } from './roles/roles.component';
+import { AppComponent } from './app.component';
 
 
-export const routes: Routes=[
+const routes: Routes=[
+  {path:"", component: AppComponent},
   {path: 'roles', component: RolesComponent},
 
-  { path: '', redirectTo: '/roles', pathMatch: 'full' },
+  //{ path: '', redirectTo: '/roles', pathMatch: 'full' },
 ];
 
 @NgModule({
-  declarations: [],
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports:[RouterModule.forRoot(routes)],
+  exports:[RouterModule]
 })
 export class AppRoutingModule { }

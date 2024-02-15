@@ -1,24 +1,25 @@
 import { Component } from '@angular/core';
-import { RolesService } from '../Services/roles.service';
-import { response } from 'express';
-import { roles } from '../models/roles';
-
-
+import { RolesService, RolesResponse } from '../Services/roles.service';
 
 @Component({
   selector: 'app-roles',
-  standalone: true,
-  imports: [],
   templateUrl: './roles.component.html',
-  styleUrl: './roles.component.css'
+  styleUrls: ['./roles.component.css']
 })
 export class RolesComponent {
-  constructor(private services:RolesService){}
-  public rolelist:roles[]=[];
-  Getroleslist(){
-    this.services.getRoles().subscribe((response:any)=>{
-      this.rolelist = response.data.media;
-      console.log(this.rolelist);
-    });
+  constructor(private services: RolesService) {}
+
+  public rolelist: RolesResponse[] = [];
+
+  Getroleslist() {
+    this.services.getRoles().subscribe(
+      (response: RolesResponse[]) => {
+        this.rolelist = response;
+        console.log(this.rolelist);
+      },
+      (error) => {
+        console.error('Error fetching roles:', error);
+      }
+    );
   }
 }
