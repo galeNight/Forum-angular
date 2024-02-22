@@ -6,19 +6,33 @@ import { RolesComponent } from './roles/roles.component';
 import { HttpClientModule } from '@angular/common/http';
 import { Location } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatSidenavModule} from '@angular/material/sidenav'
+import { MatButtonModule} from '@angular/material/button';
+import { MatListModule} from '@angular/material/list'
+import { MatExpansionModule } from '@angular/material/expansion'
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async'
+import { SideMenuComponent } from './side-menu/side-menu.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     RolesComponent,
+    SideMenuComponent,
+
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSidenavModule,
+    MatButtonModule,
+    MatListModule,
+    MatExpansionModule
   ],
-  providers: [Location],
+  providers: [Location, provideAnimationsAsync()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

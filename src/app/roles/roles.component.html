@@ -1,2 +1,6 @@
 <p>roles works!</p>
-<button (click)="Getroleslist()"></button>
+<button (click)="Getroleslist()"> Get roles List</button>
+
+<ul *ngIf="rolelist.length > 0">
+    <li *ngFor="let role of rolelist">{{role.roleName}}</li>
+</ul>

@@ -22,6 +22,7 @@ export class RolesService {
     const headers ={'content-type':'application/json'}//json file 
     //conts body = JSON.stringify({}) //the body with input data to api in form of a json file 
     let data = this.http.get<RolesResponse[]>(this.apiurl+"GetRoles",{'headers':headers}) //sends a request to the api and sets data to response from the api 
+    console.log(data);
     return data;
   }
 }

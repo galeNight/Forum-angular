@@ -1,0 +1,25 @@
+<p>side-menu works!</p>
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #sidenav mode="side" opened>
+    <mat-nav-list>
+      <mat-list-item>
+        <a matLine routerLink="/">Home</a>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Dashboard
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <a matLine routerLink="/dashboard">Sub-Item 1</a>
+          <!-- Add more sub-items as needed -->
+        </mat-expansion-panel>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
