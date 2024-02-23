@@ -12,6 +12,9 @@ import { MatListModule} from '@angular/material/list'
 import { MatExpansionModule } from '@angular/material/expansion'
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async'
 import { SideMenuComponent } from './side-menu/side-menu.component';
+import { MatFormFieldModule} from '@angular/material/form-field'
+import { MatSelectModule} from '@angular/material/select'
+import { FormsModule } from '@angular/forms'
 
 
 @NgModule({
@@ -30,7 +33,10 @@ import { SideMenuComponent } from './side-menu/side-menu.component';
     MatSidenavModule,
     MatButtonModule,
     MatListModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    FormsModule,
   ],
   providers: [Location, provideAnimationsAsync()],
   bootstrap: [AppComponent]

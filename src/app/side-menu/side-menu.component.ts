@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrl: './side-menu.component.css'
 })
 export class SideMenuComponent {
-
+  showFiller=false;
+  selectedOption : string='';
+  toggleFiller(){
+    this.showFiller = !this.showFiller;
+  }
 }
