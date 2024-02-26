@@ -1,0 +1,6 @@
+<p>account works!</p>
+<button (click)="Getaccountlist()"> Get account List</button>
+
+<ul *ngIf="accountlist.length > 0">
+    <li *ngFor="let account of accountlist">{{account.accountName}}</li>
+</ul>

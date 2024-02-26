@@ -22,6 +22,7 @@ import { FormsModule } from '@angular/forms'
     AppComponent,
     RolesComponent,
     SideMenuComponent,
+    AppComponent,
 
 
   ],
