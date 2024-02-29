@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { AccountService, AccountResponse } from '../Services/account.services';
+import { response } from 'express';
+
 
 @Component({
   selector: 'app-account',
@@ -7,15 +9,12 @@ import { AccountService, AccountResponse } from '../Services/account.services';
   styleUrls: ['./account.component.css'] 
 })
 export class AccountComponent {
-  constructor(private services: AccountService) {}
+  constructor(private services: AccountService) {
+
+  }
 
   public accountlist: AccountResponse[] = [];
 
-
-  addAccount(){
-    
-    
-  }
   Getaccountlist() {
     this.services.getAccount().subscribe(
       (response: AccountResponse[]) => {
