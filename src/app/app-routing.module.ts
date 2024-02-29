@@ -3,12 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { RolesComponent } from './roles/roles.component';
 import { AppComponent } from './app.component';
 import { SideMenuComponent } from './side-menu/side-menu.component';
+import { AccountComponent } from './account/account.component';
 
 
 const routes: Routes=[
   {path:"", component: AppComponent},
   {path: 'roles', component: RolesComponent},
-  {path: 'side',component: SideMenuComponent}
+  {path: 'side',component: SideMenuComponent},
+  {path: 'Account',component:AccountComponent},
 
   //{ path: '', redirectTo: '/roles', pathMatch: 'full' },
 ];

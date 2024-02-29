@@ -5,11 +5,11 @@ import { HttpClient } from "@angular/common/http";
 import { enviroment } from "../enviroment/enviroment";
 
 export interface AccountResponse{
-    AccountID:number;
-    AccountName:string;
-    AccountPassword:string;
-    AccountEmail:string;
-    RoleID:number;
+    accountID:number;
+    accountName:string;
+    accountPassword:string;
+    accountEmail:string;
+    roleID:number;
 }
 
 @Injectable({
@@ -24,7 +24,7 @@ export class AccountService{
     getAccount():Observable<AccountResponse[]>{//request from the endpoint to endpoint 
         const headers ={'content-type':'application/json'}//json file 
         //conts body = JSON.stringify({}) //the body with input data to api in form of a json file 
-        let data = this.http.get<AccountResponse[]>(this.apiurl+"GetAccount",{'headers':headers}) //sends a request to the api and sets data to response from the api 
+        let data = this.http.get<AccountResponse[]>(this.apiurl+"GetAccounts"/*match with backend controller endpoint HttpName*/,{'headers':headers}) //sends a request to the api and sets data to response from the api 
         console.log(data);
         return data;
     }

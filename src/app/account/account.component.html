@@ -1,6 +1,35 @@
 <p>account works!</p>
-<button (click)="Getaccountlist()"> Get account List</button>
+
+<!-- Add Account Form -->
+<form (submit)="addAccount()">
+    <div>
+        <input type="text" id="accountName" [(ngModel)]="accountlist" required placeholder="Account Name">
+    </div>
+
+    <div>
+        <input type="password" id="accountPassword" [(ngModel)]="accountlist" required placeholder="Account Password">
+    </div>
+
+    <div>
+        <input type="email" id="accountEmail" [(ngModel)]="accountlist" required placeholder="Account Email">
+    </div>
+
+    <div>
+        <input type="number" id="roleID" [(ngModel)]="accountlist" required placeholder="Role ID">
+    </div>
+
+    <button type="submit">Add Account</button>
+</form>
+
+<!-- Display Accounts -->
+<button (click)="Getaccountlist()">Get Account List</button>
 
 <ul *ngIf="accountlist.length > 0">
-    <li *ngFor="let account of accountlist">{{account.accountName}}</li>
+    <li *ngFor="let account of accountlist">
+        {{account.accountID}}
+        {{account.accountName}}
+        {{account.accountPassword}}
+        {{account.accountEmail}}
+        {{account.roleID}}
+    </li>
 </ul>

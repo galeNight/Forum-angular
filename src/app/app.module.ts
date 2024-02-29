@@ -15,16 +15,15 @@ import { SideMenuComponent } from './side-menu/side-menu.component';
 import { MatFormFieldModule} from '@angular/material/form-field'
 import { MatSelectModule} from '@angular/material/select'
 import { FormsModule } from '@angular/forms'
-
+import { AccountComponent } from './account/account.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RolesComponent,
     SideMenuComponent,
-    AppComponent,
-
-
+    AccountComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -38,6 +37,7 @@ import { FormsModule } from '@angular/forms'
     MatFormFieldModule,
     MatSelectModule,
     FormsModule,
+    
   ],
   providers: [Location, provideAnimationsAsync()],
   bootstrap: [AppComponent]
