@@ -1,24 +1,18 @@
 <p>account works!</p>
 
 <!-- Add Account Form -->
-<form (submit)="addAccount()">
-    <div>
-        <input type="text" id="accountName" [(ngModel)]="accountName" name="accountName" required placeholder="Account Name">
-    </div>
-
-    <div>
-        <input type="password" id="accountPassword" [(ngModel)]="accountPassword" name="accountPassword" required placeholder="Account Password">
-    </div>
-
-    <div>
-        <input type="email" id="accountEmail" [(ngModel)]="accountEmail" name="accountEmail" required placeholder="Account Email">
-    </div>
-
-    <div>
-        <input type="number" id="roleID" [(ngModel)]="roleID" name="roleID" required placeholder="Role ID">
-    </div>
-
+<form [formGroup]="accountForm" (ngSubmit)="addAccount()">
+    <input type="text" id="accountName" formControlName="accountName" required placeholder="Account Name">
+    <input type="password" id="accountPassword" formControlName="accountPassword" required placeholder="Account Password">
+    <input type="email" id="accountEmail" formControlName="accountEmail" required placeholder="Account Email">
+    <input type="number" id="roleID" formControlName="roleID" required placeholder="Role ID">
     <button type="submit">Add Account</button>
+</form>
+<form [formGroup]="loginForm"(ngSubmit)="accountLogin()">
+    <input type="text" id="username" formControlName="username" required placeholder="username">
+    <input type="password" id="password" formControlName="password" required placeholder="Account Password">
+    <button type="submit">Login</button>
+
 </form>
 
 <!-- Display Accounts -->
@@ -31,5 +25,6 @@
         {{account.accountPassword}}
         {{account.accountEmail}}
         {{account.roleID}}
+        <button (click)="deleteAccount(account.accountID)">Delete</button>
     </li>
 </ul>
