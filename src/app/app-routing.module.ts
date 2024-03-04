@@ -10,9 +10,9 @@ import { profileComponent } from './profile/profile.component';
 const routes: Routes=[
   {path:"", component: AppComponent},
   {path: 'Roles', component: RolesComponent},
-  {path: 'Side',component: SideMenuComponent},
+  {path: 'Side-menu',component: SideMenuComponent},
   {path: 'Account',component:AccountComponent},
-  {path: 'Login/:id',component:LoginComponent},
+  {path: 'Login',component:LoginComponent},
   {path: 'Profile',component:profileComponent},
 
   //{ path: '', redirectTo: '/roles', pathMatch: 'full' },

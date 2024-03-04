@@ -26,5 +26,5 @@ export class LoginService {
     let data = this.http.post<LoginResponse[]>(this.apiurl+"Login"/*match with backend controller endpoint HttpName*/,body,{'headers':headers}) //sends a request to the api and sets data to response from the api 
     console.log(data);
     return data;
-}
+  }
 }

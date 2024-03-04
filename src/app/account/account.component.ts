@@ -13,6 +13,12 @@ import { OnInit } from '@angular/core';
 export class AccountComponent implements OnInit {
   accountForm!: FormGroup;
 
+  constructor(private accountService: AccountService) {
+    this.services = accountService; 
+  }
+  
+  services: AccountService; // Add the 'services' property
+
   ngOnInit() {
 
     this.accountForm = new FormGroup({
@@ -28,12 +34,6 @@ export class AccountComponent implements OnInit {
   public accountPassword: string = ''; 
   public accountEmail: string = '';
   public roleID: number = 0;
-
-  services: AccountService; // Add the 'services' property
-
-  constructor(private accountService: AccountService) {
-    this.services = accountService; 
-  }
 
   addAccount() {
     console.log('Account form:', this.accountForm.value);

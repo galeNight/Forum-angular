@@ -18,8 +18,6 @@ export class ProfileService {
   private readonly apiurl=enviroment.apiurl+"Account/";//api route
   constructor(private http:HttpClient) { }
 
-
-  
   updateAccount(accountData:profileResponse):Observable<profileResponse[]>{
     console.log(accountData)
     const headers ={'content-type':'application/json'}
@@ -28,5 +26,5 @@ export class ProfileService {
     let data = this.http.post<profileResponse[]>(this.apiurl+"UpdateAccount"/*match with backend controller endpoint HttpName*/,body,{'headers':headers})
     console.log(data);
     return data;
-}
+  }
 }

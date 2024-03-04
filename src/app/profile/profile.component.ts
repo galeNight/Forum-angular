@@ -27,7 +27,7 @@ export class profileComponent implements OnInit {
       'roleID': new FormControl(null, Validators.required)
     });
   }
-
+  
   UpdateAccount() {
     console.log('Account form:', this.updateForm.value);
     const accountData = this.updateForm.value; // Get the form values
