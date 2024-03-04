@@ -5,7 +5,6 @@
     <input type="text" id="accountName" formControlName="accountName" required placeholder="Account Name">
     <input type="password" id="accountPassword" formControlName="accountPassword" required placeholder="Account Password">
     <input type="email" id="accountEmail" formControlName="accountEmail" required placeholder="Account Email">
-    <input type="number" id="roleID" formControlName="roleID" required placeholder="Role ID">
     <button type="submit">Add Account</button>
 </form>
 
@@ -19,6 +18,5 @@
         {{account.accountPassword}}
         {{account.accountEmail}}
         {{account.roleID}}
-        <button (click)="deleteAccount(account.accountID)">Delete</button>
     </li>
 </ul>

@@ -25,7 +25,6 @@ export class AccountComponent implements OnInit {
       'accountName': new FormControl(null, Validators.required),
       'accountPassword': new FormControl(null, Validators.required),
       'accountEmail': new FormControl(null, [Validators.required, Validators.email]),
-      'roleID': new FormControl(null, Validators.required)
     });
   }
   public accountlist: AccountResponse[] = [];
@@ -60,17 +59,5 @@ export class AccountComponent implements OnInit {
       }
     );
   }
-  deleteAccount(accountID: number) {
-    this.services.deleteAccount(accountID).subscribe(
-      (response: any) => {
-        console.log('Account deleted:', response);
-        this.Getaccountlist();
-        this.accountForm.reset();
-      },
-      (error: any) => {
-        console.error('Error deleting account:', error);
-        this.Getaccountlist();
-      }
-    );
-  }
+
 }

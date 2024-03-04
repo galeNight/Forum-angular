@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { OnInit } from '@angular/core';
 import{ ProfileService, } from '../Services/profile.service';
+import { account } from '../models/account';
 
 
 @Component({
@@ -40,5 +41,22 @@ export class profileComponent implements OnInit {
         console.error('Error updating account:', error);
       }
     );
+  }
+  deleteAccount() {
+    let stringAccountID = sessionStorage.getItem('accountID');
+    let accountID = parseInt(stringAccountID!);
+    console.log('Account ID:', accountID);
+    this.services.deleteAccount(accountID).subscribe(
+      (response: any) => {
+        console.log('Account deleted:', response);
+      },
+      (error: any) => {
+        console.error('Error deleting account:', error);
+      }
+    );
+  }
+  logout(){
+    sessionStorage.removeItem('accountID');
+    window.location.href = '/Login';
   }
 }

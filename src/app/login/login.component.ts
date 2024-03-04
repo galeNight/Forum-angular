@@ -27,12 +27,17 @@ constructor(private LoginService: LoginService) {
     this.services.loginAccount(accountData).subscribe(
       (response: any) => {
         console.log('logged in with id:', response);
+        sessionStorage.setItem('accountID', response);
         this.loginForm.reset();
+        this.gotoprofile();
       },
       (error: any) => {
         console.error('Error Login failed', error);
       }
     );
+  }
+  gotoprofile(){
+    window.location.href = '/Profile';
   }
 }
 

@@ -37,10 +37,5 @@ export class AccountService{
         console.log(data);
         return data;
     }
-    deleteAccount(accountID:number):Observable<AccountResponse[]>{
-        const headers ={'content-type':'application/json'}
-        let data = this.http.delete<AccountResponse[]>(this.apiurl+"DeleteAccount/"+"?id="+accountID/*match with backend controller endpoint HttpName*/,{'headers':headers})
-        console.log(data);
-        return data;
-    }
+
 }
