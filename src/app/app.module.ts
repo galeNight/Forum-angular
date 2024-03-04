@@ -17,6 +17,7 @@ import { MatSelectModule} from '@angular/material/select'
 import { FormsModule } from '@angular/forms'
 import { AccountComponent } from './account/account.component';
 import { LoginComponent } from './login/login.component';
+import { profileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { LoginComponent } from './login/login.component';
     SideMenuComponent,
     AccountComponent,
     LoginComponent,
+    profileComponent
     
   ],
   imports: [

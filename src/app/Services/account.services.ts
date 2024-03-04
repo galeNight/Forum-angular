@@ -43,20 +43,4 @@ export class AccountService{
         console.log(data);
         return data;
     }
-    loginAccount(accountData:any):Observable<AccountResponse[]>{//request from the endpoint to endpoint 
-        const headers ={'content-type':'application/json'}//json file 
-        const body = JSON.stringify(accountData) //the body with input data to api in form of a json file 
-        let data = this.http.post<AccountResponse[]>(this.apiurl+"Login"/*match with backend controller endpoint HttpName*/,body,{'headers':headers}) //sends a request to the api and sets data to response from the api 
-        console.log(data);
-        return data;
-    }
-    updateAccount(accountData:any):Observable<AccountResponse[]>{
-        console.log(accountData)
-        const headers ={'content-type':'application/json'}
-        const body = JSON.stringify(accountData)
-        console.log("body",body)
-        let data = this.http.put<AccountResponse[]>(this.apiurl+"UpdateAccount"/*match with backend controller endpoint HttpName*/,body,{'headers':headers})
-        console.log(data);
-        return data;
-    }
 }

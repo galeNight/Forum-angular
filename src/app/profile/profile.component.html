@@ -1,1 +1,10 @@
 <p>profile works!</p>
+<!-- update Account Form -->
+<form [formGroup]="updateForm" (ngSubmit)="UpdateAccount()">
+    <input type="text" id="accountID" formControlName="accountID" required placeholder="Account ID">
+    <input type="text" id="accountName" formControlName="accountName" required placeholder="Account Name">
+    <input type="password" id="accountPassword" formControlName="accountPassword" required placeholder="Account Password">
+    <input type="email" id="accountEmail" formControlName="accountEmail" required placeholder="Account Email">
+    <input type="number" id="roleID" formControlName="roleID" required placeholder="Role ID">
+    <button type="submit">Update Account</button>
+</form>

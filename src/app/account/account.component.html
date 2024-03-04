@@ -8,12 +8,7 @@
     <input type="number" id="roleID" formControlName="roleID" required placeholder="Role ID">
     <button type="submit">Add Account</button>
 </form>
-<form [formGroup]="loginForm"(ngSubmit)="accountLogin()">
-    <input type="text" id="username" formControlName="username" required placeholder="username">
-    <input type="password" id="password" formControlName="password" required placeholder="Account Password">
-    <button type="submit">Login</button>
 
-</form>
 
 <!-- Display Accounts -->
 <button (click)="Getaccountlist()">Get Account List</button>

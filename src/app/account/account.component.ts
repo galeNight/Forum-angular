@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 import { AccountService, AccountResponse } from '../Services/account.services';
-import { response } from 'express';
-import { account } from '../models/account';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { OnInit } from '@angular/core';
 
@@ -14,13 +12,9 @@ import { OnInit } from '@angular/core';
 
 export class AccountComponent implements OnInit {
   accountForm!: FormGroup;
-  loginForm!: FormGroup;
 
   ngOnInit() {
-    this.loginForm = new FormGroup({
-      'username': new FormControl(null, Validators.required),
-      'password': new FormControl(null, Validators.required)
-    });
+
     this.accountForm = new FormGroup({
       'accountName': new FormControl(null, Validators.required),
       'accountPassword': new FormControl(null, Validators.required),
@@ -29,6 +23,7 @@ export class AccountComponent implements OnInit {
     });
   }
   public accountlist: AccountResponse[] = [];
+  public accountID: number = 0;
   public accountName: string = '';
   public accountPassword: string = ''; 
   public accountEmail: string = '';
@@ -75,35 +70,6 @@ export class AccountComponent implements OnInit {
       (error: any) => {
         console.error('Error deleting account:', error);
         this.Getaccountlist();
-        
-      }
-    );
-  }
-  accountLogin() {
-    console.log('Login form:', this.loginForm.value);
-    const accountData = this.loginForm.value; // Get the form values
-    this.services.loginAccount(accountData).subscribe(
-      (response: any) => {
-        console.log('logged in with id:', response);
-        this.Getaccountlist();
-        this.loginForm.reset();
-      },
-      (error: any) => {
-        console.error('Error Login failed', error);
-      }
-    );
-  }
-  UpdateAccount(accountID: number) {
-    console.log('Account form:', this.accountForm.value);
-    const accountData = this.accountForm.value; // Get the form values
-    this.services.updateAccount(accountID, accountData).subscribe(
-      (response: any) => {
-        console.log('Account updated:', response);
-        this.Getaccountlist();
-        this.accountForm.reset();
-      },
-      (error: any) => {
-        console.error('Error updating account:', error);
       }
     );
   }
