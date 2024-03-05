@@ -15,4 +15,26 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'Forum.Angular';
+
+  gotoProfile() {
+    window.location.href = '/Profile';
+  }
+  gotoLogin() {
+    window.location.href = '/Login';
+  }
+  gotoaccount() {
+    window.location.href = '/Account';
+  }
+  gotohome() {
+    window.location.href = '/';
+  }
+  gotoRoles() {
+    window.location.href = '/Roles';
+  }
+  gotoSideMenu() {
+    window.location.href = '/Side-menu';
+  }
+  gotoTopic() {
+    window.location.href = '/Topic';
+  }
 }
