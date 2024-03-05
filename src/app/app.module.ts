@@ -18,6 +18,7 @@ import { FormsModule } from '@angular/forms'
 import { AccountComponent } from './account/account.component';
 import { LoginComponent } from './login/login.component';
 import { profileComponent } from './profile/profile.component';
+import { TopicComponent } from './topic/topic.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { profileComponent } from './profile/profile.component';
     SideMenuComponent,
     AccountComponent,
     LoginComponent,
-    profileComponent
+    profileComponent,
+    TopicComponent,
     
   ],
   imports: [

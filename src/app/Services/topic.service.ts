@@ -23,9 +23,12 @@ export class TopicService {
         console.log(data);
         return data;
     }
-    addTopic():Observable<TopicResponse[]>{
+    createTopic(topicData:any):Observable<TopicResponse[]>{//request from the endpoint to endpoint
+        console.log(topicData)
         const headers ={'content-type':'application/json'}
-        let data = this.http.post<TopicResponse[]>(this.apiurl+"CreateTopic"/*match with backend controller endpoint HttpName*/,{'headers':headers})
+        const body = JSON.stringify(topicData)
+        console.log("body",body)
+        let data = this.http.post<TopicResponse[]>(this.apiurl+"CreateTopic"/*match with backend controller endpoint HttpName*/,body,{'headers':headers})
         console.log(data);
         return data;
     }

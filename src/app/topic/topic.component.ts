@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { TopicService, TopicResponse} from '../Services/topic.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { OnInit } from '@angular/core';
+import { response } from 'express';
+import { error } from 'console';
 
 @Component({
   selector: 'app-topic',
@@ -22,11 +24,10 @@ export class TopicComponent implements OnInit {
       'topicID': new FormControl(null, Validators.required),
       'description': new FormControl(null, Validators.required),
     });
+    this.getTopic(); //call getTopic on initialization
   }
 
   public topiclist: TopicResponse[] = [];
-  public topicID: number = 0;
-  public description: string = '';
 
   getTopic() {
     this.services.getTopic().subscribe(
@@ -36,6 +37,20 @@ export class TopicComponent implements OnInit {
       },
       (error) => {
         console.error('Error fetching topic:', error);
+      }
+    );
+  }
+  addTopic() {
+    console.log('Topic form:', this.topicForm.value);
+    const topicData = this.topicForm.value; // Get the form values
+    this.services.createTopic(topicData).subscribe(
+      (response: any) => {
+        console.log('Topic added:', response);
+        this.getTopic();
+        this.topicForm.reset();
+      },
+      (error: any) => {
+        console.error('Error adding topic:', error);
       }
     );
   }
