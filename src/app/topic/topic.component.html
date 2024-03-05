@@ -10,15 +10,14 @@
     <tbody>
       <!-- Use *ngFor to iterate through the topiclist array -->
       <tr *ngFor="let topic of topiclist">
+        <td>{{ topic.topicID }}</td> <!-- Assuming your topic object has an 'id' property -->
         <td>{{ topic.description }}</td>
       </tr>
     </tbody>
-  </table>
-  <!-- Add the topicForm for creating new topics -->
-  <form [formGroup]="topicForm" (ngSubmit)="addTopic()">
-  
+</table>
+<!-- Add the topicForm for creating new topics -->
+<form [formGroup]="topicForm" (ngSubmit)="addTopic()">
     <label for="description">Description:</label>
     <input type="text" id="description" formControlName="description" />
     <button type="submit">Add Topic</button>
-  </form>
-  
+</form>

@@ -2,8 +2,6 @@ import { Component } from '@angular/core';
 import { TopicService, TopicResponse} from '../Services/topic.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { OnInit } from '@angular/core';
-import { response } from 'express';
-import { error } from 'console';
 
 @Component({
   selector: 'app-topic',
