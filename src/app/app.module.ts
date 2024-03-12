@@ -19,6 +19,7 @@ import { AccountComponent } from './account/account.component';
 import { LoginComponent } from './login/login.component';
 import { profileComponent } from './profile/profile.component';
 import { TopicComponent } from './topic/topic.component';
+import { CommentComponent } from './comment/comment.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { TopicComponent } from './topic/topic.component';
     LoginComponent,
     profileComponent,
     TopicComponent,
+    CommentComponent,
     
   ],
   imports: [

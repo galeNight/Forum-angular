@@ -32,4 +32,10 @@ export class TopicService {
         console.log(data);
         return data;
     }
+    deleteTopic(topicID: number): Observable<TopicResponse[]> {
+        const headers = { 'content-type': 'application/json' };
+        let data = this.http.delete<TopicResponse[]>(this.apiurl + 'DeleteTopic/' + topicID, { 'headers': headers });
+        console.log(data);
+        return data;
+    }
 }

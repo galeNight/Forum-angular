@@ -37,4 +37,7 @@ export class AppComponent {
   gotoTopic() {
     window.location.href = '/Topic';
   }
+  gotoComment() {
+    window.location.href = '/Comment';
+  }
 }

@@ -52,4 +52,15 @@ export class TopicComponent implements OnInit {
       }
     );
   }
+  deleteTopic(topicID: number) {
+    this.services.deleteTopic(topicID).subscribe(
+      (response: any) => {
+        console.log('Topic deleted:', response);
+        this.getTopic();
+      },
+      (error: any) => {
+        console.error('Error deleting topic:', error);
+      }
+    );
+  }
 }

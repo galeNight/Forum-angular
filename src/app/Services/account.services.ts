@@ -36,6 +36,5 @@ export class AccountService{
         let data = this.http.post<AccountResponse[]>(this.apiurl+"CreateAccount"/*match with backend controller endpoint HttpName*/,body,{'headers':headers})
         console.log(data);
         return data;
-    }
-    
+    } 
 }

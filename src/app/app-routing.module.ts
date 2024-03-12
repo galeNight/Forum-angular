@@ -7,6 +7,7 @@ import { AccountComponent } from './account/account.component';
 import { LoginComponent } from './login/login.component';
 import { profileComponent } from './profile/profile.component';
 import { TopicComponent } from './topic/topic.component';
+import { CommentComponent } from './comment/comment.component';
 
 const routes: Routes=[
   //{path:"", component: AppComponent},
@@ -16,6 +17,7 @@ const routes: Routes=[
   {path: 'Login',component:LoginComponent},
   {path: 'Profile',component:profileComponent},
   {path: 'Topic',component:TopicComponent},
+  {path: 'Comment',component:CommentComponent},
 
   //{ path: '', redirectTo: '/roles', pathMatch: 'full' },
 ];
@@ -24,4 +26,6 @@ const routes: Routes=[
   imports:[RouterModule.forRoot(routes)],
   exports:[RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+  
+ }
